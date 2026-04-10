@@ -24,3 +24,5 @@ create database if not exists school_db;
 drop database if exists collage_db;
 
 show databases;
+
+Notes : https://miro.com/app/board/uXjVGlS89Ec=/?share_link_id=664521065069
