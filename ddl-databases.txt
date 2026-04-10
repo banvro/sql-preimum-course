@@ -1,0 +1,26 @@
+-- how to  cerate a database?
+
+create database my_collage;
+
+show databases;
+
+-- how to delete database
+
+drop database my_collage;
+
+-- how to creat-- e databases.
+-- how to retrive databases.
+-- how to delete a database.
+
+show databases;
+
+use collage_db;
+
+show tables;
+
+
+create database if not exists school_db;
+
+drop database if exists collage_db;
+
+show databases;
