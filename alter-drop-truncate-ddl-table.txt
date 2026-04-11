@@ -64,3 +64,6 @@ select * from teacher_x_info;
 
 truncate table teacher_x_info;
 ----------------------------------------------------------------------------------------------------------------
+
+
+Notes : https://miro.com/app/board/uXjVGk0-KEQ=/?share_link_id=582811827455
