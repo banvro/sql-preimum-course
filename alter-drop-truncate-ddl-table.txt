@@ -1,0 +1,66 @@
+sql file 12
+
+create table if not exists teacher_info(
+	id int,
+    t_name varchar(90),
+    t_course varchar(40),
+    t_email varchar(120)
+);
+
+show tables;
+
+
+select * from teacher_info;
+
+insert into teacher_info values(3, 'abc', "pascal", "abc@gmail.com"); 
+
+create table new_teachers_info like teacher_info;
+
+
+select * from teacher_info;
+
+create table teacher_info_backup as select id, t_name from teacher_info;
+
+select * from teacher_info_backup;
+
+----------------------------------------------------------------------------------------------------------------
+sql file 13
+
+
+show tables;
+
+select * from teacher_info;
+
+alter table teacher_info add column address text;
+
+alter table teacher_info add column sallery int;
+
+-- delete a colunm
+select * from teacher_info;
+
+alter table teacher_info drop column address;
+
+
+alter table teacher_info modify sallery varchar(5);
+
+-- chnage column name
+select * from teacher_x_info;
+
+alter table teacher_info rename column t_course to my_course;
+
+alter table teacher_info rename to teacher_x_info;
+
+----------------------------------------------------------------------------------------------------------------
+sql file 14
+
+
+show tables;
+
+select * from teacher_info_backup;
+
+drop table if exists teacher_info_backup;
+
+select * from teacher_x_info;
+
+truncate table teacher_x_info;
+----------------------------------------------------------------------------------------------------------------
