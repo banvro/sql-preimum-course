@@ -1,0 +1,34 @@
+
+create table testing(
+	name varchar(120),
+    height decimal(9, 4)
+);
+
+select * from testing;
+
+insert into testing values('hey', 28343.236238476);
+
+drop table testing;
+
+
+create table learn_str(
+	name varchar(20),
+    country char(2),
+    gender varchar(6)
+);
+
+select * from learn_str;
+
+insert into learn_str values(
+	"hello", "IN", "Femalex"
+);
+
+drop table learn_str;
+
+
+
+
+
+
+
+notes : https://miro.com/app/board/uXjVGixF39g=/?share_link_id=331386460447
