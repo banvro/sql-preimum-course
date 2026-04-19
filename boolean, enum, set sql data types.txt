@@ -1,0 +1,19 @@
+
+create table my_tb(
+		name varchar(20),
+        is_active boolean,
+        gender enum('male', 'female', 'other'),
+        pro_len set("python", "java", "javascript", "html", "pascal")
+);
+
+select * from my_tb where FIND_IN_SET("pascal", pro_len);
+
+insert into my_tb values("xyz", 0, 'female', 'pascal');
+
+drop table my_tb;
+
+
+
+
+
+Notes : https://miro.com/app/board/uXjVGgM68Kw=/?share_link_id=784323353953
