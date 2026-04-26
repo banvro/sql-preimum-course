@@ -1,0 +1,118 @@
+
+create table students(
+	name varchar(30) not null,
+    email varchar(150) not null,
+    phone_number varchar(12)
+);
+
+select * from students;
+
+describe students;
+
+insert into students (name, email) values
+("hi", "hi@gmal.com");
+
+drop table students;
+
+alter table students modify email varchar(150) null;
+
+-----------------------------------------------------------------------------------------------------------------------
+create table students_new(
+	roll_number int auto_increment unique,
+    name varchar(120) not null,
+    email varchar(120)
+);
+
+describe students_new;
+
+insert into students_new (name, email) values("hi", "hi@gmail.om");
+
+select * from students_new;
+-----------------------------------------------------------------------------------------------------------------------
+create table emp(
+	id int auto_increment unique,
+    name varchar(120) not null,
+    email varchar(120) unique
+);
+
+describe emp;
+
+insert into emp (name, email) values("xyz", "naresh@gmail.com");
+
+select * from emp;
+
+-----------------------------------------------------------------------------------------------------------------------
+create table insta(
+	id int auto_increment unique,
+    username varchar(30),
+    email varchar(150),
+    full_name varchar(100),
+    
+    constraint u_email_username unique (username, email)
+);
+
+describe insta;
+
+insert into insta (username, email, full_name) values
+("x", "x@gmail.com", "z");
+
+select * from insta;
+
+alter table insta drop constraint unq_email;
+
+drop table insta;
+
+
+-----------------------------------------------------------------------------------------------------------------------
+create table voating(
+	id int auto_increment unique,
+    name varchar(30) not null,
+    age int check (age >= 18)
+);
+
+insert into voating (name, age) values ("xyz", 17);
+
+select * from voating;
+-----------------------------------------------------------------------------------------------------------------------
+create table voat(
+	id int auto_increment unique,
+    name varchar(30) not null,
+    age int,
+    username varchar(30),
+    
+    constraint eligible check (age > 18),
+    constraint check_usename check (length(username) < 10 
+    and length(username) > 3)
+);
+
+insert into voat (name, age, username) values ("x", 20, "hloe");
+
+
+
+drop table voat;
+-----------------------------------------------------------------------------------------------------------------------
+create table emp(
+	id int auto_increment unique,
+    emp_name varchar(30) not null,
+    emp_email varchar(50) unique not null,
+    age int check (age > 20),
+    attendence varchar(10) default "absent"
+);
+
+insert into emp (emp_name, emp_email, age, attendence) values
+("xyz", "xyz@gmail.com", 22, "present");
+
+select * from emp;
+-----------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------
+Notes : https://miro.com/app/board/uXjVHcvuxf4=/?share_link_id=776849423853
+-----------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------
