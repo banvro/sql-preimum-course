@@ -1,0 +1,119 @@
+
+create database new;
+
+use new;
+
+create table orders(
+	id int auto_increment unique,
+    product_name varchar(120),
+    price decimal(9, 2),
+    quentity int,
+    total decimal(9, 2) generated always as (price * quentity) virtual
+);
+
+describe orders;
+
+insert into orders (product_name, price, quentity) values ("phone", 20000, 2);
+
+select * from orders;
+
+drop table orders;
+
+---------------------------------------------------------------------------------------------------------------------------------
+  create table users(
+	id int auto_increment  primary key,
+    name varchar(120) not null,
+    email varchar(120) unique,
+    phone_number varchar(12)
+);
+
+describe users;
+
+insert into users(name, email, phone_number) values(
+	"x", "x@gmail.com", "1111111111"
+);
+
+select * from users;
+---------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
+  create table users(
+	id int auto_increment  primary key,
+    name varchar(120) not null,
+    email varchar(120) unique,
+    phone_number varchar(12)
+);
+
+create table other_info(
+	order_id int auto_increment primary key,
+    user_id int unique references users(id),
+    adhar_number varchar(16),
+    pan_number varchar(10)
+);
+
+select * from other_info;
+
+insert into other_info (user_id, adhar_number, pan_number) values
+(3, "092740324", "jbk2b343")
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
+  create table users(
+	id int auto_increment  primary key,
+    name varchar(120) not null,
+    email varchar(120) unique,
+    phone_number varchar(12)
+);
+
+create table course(
+	id int auto_increment primary key,
+    user_id int,
+    course_name varchar(120) not null,
+    constraint fk_user_couse foreign key (user_id) references users(id)
+);
+
+insert into course (user_id, course_name) values ("2", "pascal");
+
+select * from course;
+---------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
+  create table users(
+	id int auto_increment  primary key,
+    name varchar(120) not null,
+    email varchar(120) unique,
+    phone_number varchar(12)
+);
+
+create table courses(
+	id int auto_increment primary key,
+    course_name varchar(120) not null
+);
+
+insert into courses (course_name) values ("java");
+
+create table enrollment(
+	id int primary key auto_increment,
+    
+    user_id int,
+    course_id int,
+	
+    constraint fk_user foreign key (user_id) references users(id),
+    constraint fk_course foreign key (course_id) references course(id)
+);
+
+
+describe enrollment;
+
+insert into enrollment(user_id, course_id) values (3, 3);
+
+select * from users;
+select * from courses;
+
+select * from enrollment;
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
+  Notes : https://miro.com/app/board/uXjVHcEJ1fE=/?share_link_id=178369741267
+---------------------------------------------------------------------------------------------------------------------------------
