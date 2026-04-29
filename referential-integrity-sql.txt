@@ -1,0 +1,69 @@
+create database shopping;
+
+use shopping;
+
+create table customers(
+	customer_id int auto_increment primary key,
+    name varchar(120) not null
+);
+
+create table orders(
+	order_id int auto_increment primary key,
+    customer_idd int,
+	product_name varchar(120),
+    
+    constraint fk_orders_customer foreign key (customer_idd) 
+    references customers(customer_id)
+    on delete restrict
+    on update restrict
+);
+
+select * from customers;
+select * from orders;
+
+insert into orders (customer_idd, product_name) values (3, "tablate");
+
+delete from customers where customer_id = 2;
+ --------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------
+
+
+
+create table customers_x(
+	customer_id int primary key,
+    name varchar(120) not null
+);
+
+create table orders_x(
+	order_id int auto_increment primary key,
+    customer_idd int,
+	product_name varchar(120),
+    
+    constraint fk_orders_customer_new foreign key (customer_idd) 
+    references customers_x(customer_id)
+    on delete cascade
+    on update cascade
+);
+
+insert into orders_x (customer_idd, product_name)  values (103, "iphone13");
+
+select * from customers_x;
+select * from orders_x;
+
+update customers_x set customer_id = 12 where customer_id = 101;
+
+delete from customers_x where customer_id = 103;
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------
+
+Notes : https://miro.com/app/board/uXjVHbGtoss=/?share_link_id=189592617455
+
+--------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------
